@@ -1,35 +1,35 @@
-function varargout = untitled1(varargin)
-% UNTITLED1 MATLAB code for untitled1.fig
-%      UNTITLED1, by itself, creates a new UNTITLED1 or raises the existing
+function varargout = GUI(varargin)
+% GUI MATLAB code for GUI.fig
+%      GUI, by itself, creates a new GUI or raises the existing
 %      singleton*.
 %
-%      H = UNTITLED1 returns the handle to a new UNTITLED1 or the handle to
+%      H = GUI returns the handle to a new GUI or the handle to
 %      the existing singleton*.
 %
-%      UNTITLED1('CALLBACK',hObject,eventData,handles,...) calls the local
-%      function named CALLBACK in UNTITLED1.M with the given input arguments.
+%      GUI('CALLBACK',hObject,eventData,handles,...) calls the local
+%      function named CALLBACK in GUI.M with the given input arguments.
 %
-%      UNTITLED1('Property','Value',...) creates a new UNTITLED1 or raises the
+%      GUI('Property','Value',...) creates a new GUI or raises the
 %      existing singleton*.  Starting from the left, property value pairs are
-%      applied to the GUI before untitled1_OpeningFcn gets called.  An
+%      applied to the GUI before GUI_OpeningFcn gets called.  An
 %      unrecognized property name or invalid value makes property application
-%      stop.  All inputs are passed to untitled1_OpeningFcn via varargin.
+%      stop.  All inputs are passed to GUI_OpeningFcn via varargin.
 %
 %      *See GUI Options on GUIDE's Tools menu.  Choose "GUI allows only one
 %      instance to run (singleton)".
 %
 % See also: GUIDE, GUIDATA, GUIHANDLES
 
-% Edit the above text to modify the response to help untitled1
+% Edit the above text to modify the response to help GUI
 
-% Last Modified by GUIDE v2.5 04-Nov-2017 16:40:40
+% Last Modified by GUIDE v2.5 05-Nov-2017 23:20:55
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
                    'gui_Singleton',  gui_Singleton, ...
-                   'gui_OpeningFcn', @end_OpeningFcn, ...
-                   'gui_OutputFcn',  @untitled1_OutputFcn, ...
+                   'gui_OpeningFcn', @GUI_OpeningFcn, ...
+                   'gui_OutputFcn',  @GUI_OutputFcn, ...
                    'gui_LayoutFcn',  [] , ...
                    'gui_Callback',   []);
 if nargin && ischar(varargin{1})
@@ -41,89 +41,46 @@ if nargout
 else
     gui_mainfcn(gui_State, varargin{:});
 end
-
 % End initialization code - DO NOT EDIT
 
-end
 
-% --- Executes just before MatlabGUI is made visible.
-function end_OpeningFcn(hObject, eventdata, handles, varargin)
+% --- Executes just before GUI is made visible.
+function GUI_OpeningFcn(hObject, eventdata, handles, varargin)
+% This function has no output args, see OutputFcn.
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+% varargin   command line arguments to GUI (see VARARGIN)
 
-% DEFAULT FUNCTION
-
-% Choose default command line output for untitled1
+% Choose default command line output for GUI
 handles.output = hObject;
 
 % Update handles structure
 guidata(hObject, handles);
 
-% UIWAIT makes untitled1 wait for user response (see UIRESUME)
+% UIWAIT makes GUI wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
-end
+
 
 % --- Outputs from this function are returned to the command line.
-function varargout = untitled1_OutputFcn(hObject, eventdata, handles) 
-
-% DEFAULT FUNCTION
+function varargout = GUI_OutputFcn(hObject, eventdata, handles) 
+% varargout  cell array for returning output args (see VARARGOUT);
+% hObject    handle to figure
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
 
 % Get default command line output from handles structure
 varargout{1} = handles.output;
-end
 
+
+%-------------------------------------------------------------------------
 
 % All default auto generated stuff above - don't edit
-%---------------------------------------------------------------------
 
-%
-%                                                  `T",.`-, 
-%                                                     '8, :. 
-%                                              `""`oooob."T,. 
-%                                            ,-`".)O;8:doob.'-. 
-%                                     ,..`'.'' -dP()d8O8Yo8:,..`, 
-%                                   -o8b-     ,..)doOO8:':o; `Y8.`, 
-%                                  ,..bo.,.....)OOO888o' :oO.  ".  `-. 
-%                                , "`"d....88OOOOO8O88o  :O8o;.    ;;,b 
-%                               ,dOOOOO""""""""O88888o:  :O88Oo.;:o888d 
-%                               ""888Ob...,-- :o88O88o:. :o'"""""""Y8OP 
-%                               d8888.....,.. :o8OO888:: :: 
-%                              "" .dOO8bo`'',,;O88O:O8o: ::, 
-%                                 ,dd8".  ,-)do8O8o:"""; ::: 
-%                                 ,db(.  T)8P:8o:::::    ::: 
-%                                 -"",`(;O"KdOo::        ::: 
-%                                   ,K,'".doo:::'        :o: 
-%                                    .doo:::"""::  :.    'o: 
-%        ,..            .;ooooooo..o:"""""     ::;. ::;.  'o. 
-%   ,, "'    ` ..   .d;o:"""'                  ::o:;::o::  :; 
-%   d,         , ..ooo::;                      ::oo:;::o"'.:o 
-%  ,d'.       :OOOOO8Oo::" '.. .               ::o8Ooo:;  ;o: 
-%  'P"   ;  ;.OPd8888O8::;. 'oOoo:.;..         ;:O88Ooo:' O"' 
-%  ,8:   o::oO` 88888OOo:::  o8O8Oo:::;;     ,;:oO88OOo;  ' 
-% ,YP  ,::;:O:  888888o::::  :8888Ooo::::::::::oo888888o;. , 
-% ',d: :;;O;:   :888888::o;  :8888888Ooooooooooo88888888Oo; , 
-% dPY:  :o8O     YO8888O:O:;  O8888888888OOOO888"" Y8o:O88o; , 
-%,' O:  'ob`      "8888888Oo;;o8888888888888'"'     `8OO:.`OOb . 
-%'  Y:  ,:o:       `8O88888OOoo"""""""""""'           `OOob`Y8b` 
-%   ::  ';o:        `8O88o:oOoP                        `8Oo `YO. 
-%   `:   Oo:         `888O::oP                          88O  :OY 
-%    :o; 8oP         :888o::P                           do:  8O: 
-%   ,ooO:8O'       ,d8888o:O'                          dOo   ;:. 
-%   ;O8odo'        88888O:o'                          do::  oo.: 
-%  d"`)8O'         "YO88Oo'                          "8O:   o8b' 
-% ''-'`"            d:O8oK  -hrr-                   dOOo'  :o": 
-%                   O:8o:b.                        :88o:   `8:, 
-%                   `8O:;7b,.                       `"8'     Y: 
-%                    `YO;`8b' 
-%                     `Oo; 8:. 
-%                      `OP"8.` 
-%                       :  Y8P 
-%                       `o  `, 
-%                        Y8bod. 
-%                        `""""' 
-
-                        
 
 function initialiseArrays(sampleNumber)
-   
+
+   % sampleNumber = getappdata(0,'sampleNumber')
     global timeData
     global xData
     global yData
@@ -138,7 +95,9 @@ function initialiseArrays(sampleNumber)
     global rollAcc
     global yawAcc
     
-    
+    %Arrays initialised for X, Y and Z Data, Roll, Pitch and Yaw Angle,
+    %Velocity and Acceleration
+    timeData = zeros(1,sampleNumber);
     xData = zeros(1,sampleNumber);
     yData = zeros(1,sampleNumber);
     zData = zeros(1,sampleNumber);
@@ -152,125 +111,64 @@ function initialiseArrays(sampleNumber)
     rollAcc = zeros(1,sampleNumber);
     yawAcc = zeros(1,sampleNumber);
     
-    %Arrays initialised for X, Y and Z Data, Roll, Pitch and Yaw Angle,
-    %Velocity and Acceleration
+
+    
+function captureData_Callback(hObject, eventdata, handles)
+
+    global timeData
+    global xData
+    global yData
+    global zData
+    global pitchAng
+    global rollAng
+    global yawAng
+    
+sampleNumber = getappdata(0,'sampleNumber');
+sampleRate = getappdata(0,'sampleRate');
+
+checkArray(sampleNumber);
+
+set(handles.captureData,'string','Press MBED Button');
+
+
+try
+    set(handles.captureData,'string','Press MBED Button');
+    s = serial('COM3');
+    fopen(s);
+catch
+    msgbox('Unable to connect to the MBED, please check the MBED is using COM4:, restart MATLAB and try again','Error','error');
 end
 
-function popupmenu_Callback(hObject, eventdata, handles)
-% hObject    handle to popupmenu (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
+i=1;
+    radConv = 180/pi;
+    while (i<sampleNumber)
+        if(i==2)
+            set(handles.captureData,'string','Data Capture has begun');
+        end
+        x = str2num(fscanf(s));
+        xData(i) = x;
+        y = str2num(fscanf(s));
+        yData(i) = y;
+        z = str2num(fscanf(s));
+        zData(i) = z;
+        pitchAng(i) = atan(y/(sqrt(z^2+x^2))*radConv); % Y angle pitch
+        rollAng(i) = atan(x/(sqrt(z^2+y^2))*radConv); % X angle roll
+        yawAng(i) = atan(z/(sqrt(x^2+y^2))*radConv); % Z angle yaw
+        timeData(i)=i*sampleRate;
+        i=i+1;
+    end
+fclose(s);
+%velAccCalculations;
+set(handles.captureData,'string','Data Captured!');
+pause(3)
+set(handles.captureData,'string','Ready to Capture Data');
 
-% Pop-up menu for selecting Time Domain/Frequency Domain
 
-contents = cellstr(get(hObject,'String'));
-popChoice = contents(get(hObject,'Value'));
-if (strcmp(popChoice,'Graph Time Domain'))
-    popVal = 1;
-elseif (strcmp(popChoice,'Graph Frequency Domain'))
-    popVal = 2;
-end
+function plotData_Callback(hObject, eventdata, handles)
 
-end
-
-function popupmenu_CreateFcn(hObject, eventdata, handles)
-
-% UI Settings for Pop-up menu
-
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-end
-
-function disproll_Callback(hObject, eventdata, handles)
-
-% 'Display Roll' tickbox
-
-% get(hObject,'Value')
-
-end
-
-function disppitch_Callback(hObject, eventdata, handles)
-
-% 'Display Pitch' tickbox
-
-% get(hObject,'Value')
-
-end
-
-function savedata_Callback(hObject, eventdata, handles)
-
-% 'Save Data' push button
-
-% Writes time, raw x, y then z data as a table, then into a .csv file
-
-end
-
-function loaddata_Callback(hObject, eventdata, handles)
-
-% 'Load Data' push button
-
-% Reads data out as a table, then into the dataSet Array, and returns the sampleRate and the sampleNumber
-
-end
-
-function sampleNumber_Callback(hObject, eventdata, handles)
-
-% 'Edit text box' for 'Number of Samples'
-
-sampleNumber = str2num(get(handles.sampleNumber, 'String'));
-setappdata(0,'sampleNumber',sampleNumber)
-set(handles.sampleNumber, 'String', num2str(sampleNumber));
-
-% We should maybe be using str2double rather than str2num, apparently
-% doubles are better but I don't really understand
-
-end
-
-function sampleNumber_CreateFcn(hObject, eventdata, handles)
-% UI settings for sample number box
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-end
-
-function sampleRate_Callback(hObject, eventdata, handles)
-
-% 'Edit text box' for 'Time Between Samples'
-
-sampleRate = str2num(get(handles.sampleRate, 'String'));
-setappdata(0,'sampleRate',sampleRate)
-set(handles.sampleRate, 'String', num2str(sampleRate));
-
-% Again possibly should be str2double
-
-end
-
-function sampleRate_CreateFcn(hObject, eventdata, handles)
-% UI settings for sample rate box
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-set(hObject,'BackgroundColor','white');
-end
-end
-
-function savesettings_Callback(hObject, eventdata, handles)
-
-% 'Save' button for saving parameters. Writes to .csv file.
-
-m = getappdata(0,'sampleNumber');
-n = getappdata(0,'sampleRate');
-fileID = fopen('settings.csv','w');
-fprintf(fileID,'%d %.3f',m,n);
-fclose(fileID);
-
-% should initialise arrays here when that function is sorted
-
-end
-
-function captureData_Callback(hObject, eventdata, handles, popChoice)
-
-% 'Ready to Capture Data' button.
-
+    N = getappdata(0,'sampleNumber');
+    R = getappdata(0,'sampleRate');
+    
     global timeData
     global xData
     global yData
@@ -284,30 +182,243 @@ function captureData_Callback(hObject, eventdata, handles, popChoice)
     global pitchAcc
     global rollAcc
     global yawAcc
+    
+    L = R*N;
+    Fs = 1/R;
+    xfft = fft(xData);
+    yfft = fft(yData);
+    
+    f = Fs*(0:(L/2))/L;
+    Py2 = abs(yfft/L);
+    Py1 = Py2(1:L/2+1);
+    Py1(2:end-1) = 2*Py1(2:end-1);
+    Px2 = abs(xfft/L);
+    Px1 = Px2(1:L/2+1);
+    Px1(2:end-1) = 2*Px1(2:end-1);
+    
+    timeDomain = get(handles.timeDomain,'value');
+    freqDomain = get(handles.freqDomain,'value');
+    dispRoll = get(handles.dispRoll,'value');
+    dispPitch = get(handles.dispPitch,'value');
+    dispYaw = get(handles.dispYaw,'value');
+    
+    axes(handles.axes);
+    
+    for timeDomain = 1
+        
+        for dispRoll = 1
+            plot(timeData,rollAng); % X axis is time, Y axis is roll angle
+                     title('Roll angle against Time');
+                     xlabel('Time');
+                     ylabel('Roll Angle');
+                     grid on;
+        end
+        for dispPitch = 1
+            plot(timeData,pitchAng); % X axis is time, Y axis is pitch angle
+                     title('Pitch angle against Time');
+                     xlabel('Time');
+                     ylabel('Pitch Angle');
+                     grid on;
+        end
+        for dispYaw = 1
+            plot(timeData,yawAng); % X axis is time, Y axis is pitch angle
+                     title('Pitch angle against Time');
+                     xlabel('Time');
+                     ylabel('Pitch Angle');
+                     grid on;
+        end
+            
+    end
+    
+    for freqDomain = 1
+        
+        for dispRoll = 1
+            plot(f,Px1);
+            title('Amplitude Spectrum against Frequency');
+            xlabel('Frequency (Hz)');
+            ylabel('Amplitude Spectrum');
+            grid on;
+        end
+        for dispPitch = 1
+            plot(f,Py1);
+            title('Amplitude Spectrum against Frequency');
+            xlabel('Frequency (Hz)');
+            ylabel('Amplitude Spectrum');
+            grid on;
+        end  
+    end
+        
+        
+        
+        
 
-set(handles.captureData, 'String', 'Please press MBDED button to begin');
-s = serial('COM4');
-fopen(s);
-i=1;
-while i<sampleNumber
-    x = str2num(fscanf(s));
-    xData(i) = x;
-    y = str2num(fscanf(s));
-    yData(i) = y;
-    z = str2num(fscanf(s));
-    zData(i) = z;
-    pitchAng(i) = atan2((y),(sqrt((z)^2)+((x)^2))*(radConv)); % Y angle pitch
-    rollAng(i) = atan2((x),(sqrt((z)^2)+((y)^2))*(radConv)); % X angle roll
-    yawAng(i) = atan2((z),(sqrt(((x)^2)+((y)^2)))*(radConv)); % Z angle yaw
-    i=i+1;
+    
+function timeDomain_Callback(hObject, eventdata, handles)
+
+function freqDomain_Callback(hObject, eventdata, handles)
+
+
+function dispRoll_Callback(hObject, eventdata, handles)
+
+function dispPitch_Callback(hObject, eventdata, handles)
+
+function dispYaw_Callback(hObject, eventdata, handles)
+
+
+function saveData_Callback(hObject, eventdata, handles)
+
+    global timeData
+    global xData
+    global yData
+    global zData
+    
+T = table(timeData.',xData.',yData.',zData.','VariableNames',{'Time','Raw_X_Values','Raw_Y_Values','Raw_Z_Values'});
+    [file,path,FilterIndex] = uiputfile('*.csv','Save Table As: ');
+    if(FilterIndex~=0)
+        writetable(T,strcat(path,file));
+        fprintf('Table saved as %s%s\n',path,file);
+    else
+        disp('Table not saved')
+    end
+    
+    
+    
+function loadData_Callback(hObject, eventdata, handles)
+
+    
+    [file,path,FilterIndex] = uigetfile('*.csv','Load: ');
+    if(FilterIndex==0)
+        msgbox('Loading data cancelled by user','Cancelled','warn');
+        return;
+    end
+     T1 = readtable(strcat(path,file));
+    dataSet = table2array(T1);
+    sampleNumber = height(T1);
+    %sampleRate = dataSet(2,1)-dataSet(1,1);
+
+    global timeData
+    global xData
+    global yData
+    global zData
+    global pitchAng
+    global rollAng
+    global yawAng
+    checkArray(sampleNumber);
+    i=1;
+    radConv = 180/pi;
+    while i<sampleNumber
+        timeData(i)=dataSet(i,1)
+        xData(i)= dataSet(i,2)
+        yData(i)= dataSet(i,3)
+        zData(i)= dataSet(i,4)
+        pitchAng(i) = atan(yData(i)/(sqrt(zData(i)^2+xData(i)^2))*radConv) % Y angle pitch
+        rollAng(i) = atan(xData(i)/(sqrt(zData(i)^2+yData(i)^2))*radConv) % X angle roll
+        yawAng(i) = atan(zData(i)/(sqrt(xData(i)^2+yData(i)^2))*radConv) % Z angle yaw
+        i=i+1
+    end
+    
+    function checkArray(sampleNumber)
+        global timeData;
+        created = exist('timeData', 'var');
+        arraySize = length(timeData);
+        
+        if (created == 0)
+            initialiseArrays(sampleNumber);
+        else
+            if(arraySize~=sampleNumber)
+                initialiseArrays(sampleNumber);
+            end
+        end
+    
+    
+
+
+
+function sampleNumber_Callback(hObject, eventdata, handles)
+
+sampleNumber = str2num(get(handles.sampleNumber, 'String'));
+setappdata(0,'sampleNumber',sampleNumber)
+set(handles.sampleNumber, 'String', num2str(sampleNumber));
+
+
+function sampleRate_Callback(hObject, eventdata, handles)
+
+sampleRate = str2num(get(handles.sampleRate, 'String'));
+setappdata(0,'sampleRate',sampleRate)
+set(handles.sampleRate, 'String', num2str(sampleRate));
+
+
+function saveParams_Callback(hObject, eventdata, handles)
+N = getappdata(0,'sampleNumber');
+R = getappdata(0,'sampleRate');
+try
+    fileID = fopen('settings.txt','w');
+    fprintf(fileID,'%d %f',N,R);
+    fclose(fileID);
+catch
+    msgbox('Unable to write to mbed settings file, please check mbed is connected as drive E:, containing a file called settings.txt and try again','Error','error');
 end
-fclose(s)
+
+
+function velAccCalculations
+
+sampleNumber = getappdata(0,'sampleNumber');
+
+    global pitchVel
+    global rollVel
+    global yawVel
+    global pitchAcc
+    global rollAcc
+    global yawAcc
+
+    i = 1;
+    
+    while (i<sampleNumber)
+        if(i==1)
+            pitchVel(i)=0;
+            rollVel(i)=0;
+            yawVel(i)=0;
+        else
+            
+            pitchVel(i) = pitchAng(i-1)-pitchAng(i);
+            rollVel(i) = rollAng(i-1)-rollAng(i);
+            yawVel(i) = yawAng(i-1)-yawAng(i);
+        end
+        i=i+1;
+    end
+    i=1;
+    while (i<sampleNumber-1)
+        pitchAcc(i)= pitchVel(i)-pitchVel(i+1);
+        rollAcc(i)= rollVel(i)-rollVel(i+1);
+        yawAcc(i)= yawVel(i)-yawVel(i+1);
+        i=i+1;
+    end
+
+    
+
+%_____________________UI Appearance settings_______________________
+
+
+
+function sampleNumber_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
 end
 
-function plot_Callback(hObject, eventdata, handles)
 
-% 'Plot Graph' button to begin plotting
+function saveBox_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
 
-axes(handles.axes);
 
+function loadBox_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+function sampleRate_CreateFcn(hObject, eventdata, handles)
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
 end
